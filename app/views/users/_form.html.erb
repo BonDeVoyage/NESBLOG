@@ -1,0 +1,21 @@
+<%= render 'shared/errors' , obj:@user %>
+
+<div class="nes-container is-dark">
+	<%= form_for @user do |f| %>
+		<p class="text-center">
+			<%= f.label :username %><br>
+			<%= f.text_field :username , 'class':'nes-input' , placeholder: "Username", autofocus: true %>
+		</p>
+		<p class="text-center">
+			<%= f.label :email %><br>
+			<%= f.text_field :email , 'class':'nes-input', placeholder: "Email" %>
+		</p>
+		<p class="text-center">
+			<%= f.label :password %><br>
+			<%= f.text_field :password , 'class':'nes-input', placeholder: "Password" %>
+		</p>
+		<p class="my-3 text-center">
+			<%= f.submit('class':'nes-btn')%>
+		</p>
+	<% end %>
+</div>

@@ -1,0 +1,48 @@
+<div class="container-fluid min-vh-100 m-0 p-0 h-100">
+	<div class="row no-gutters min-vh-100 h-100">
+		<div class="col-xl-3 d-none d-xl-block p-0 blur-middle"></div>
+		<div class="col-xl-6 mx-auto back">
+			<div class="nes-container is-rounded is-dark">
+				<h1 class="text-center my-4">
+					<%= @article.title%>
+				</h1>
+				<p class = "text-break">
+					<%= @article.text%>
+				</p>
+				<hr>
+				<small>
+					Created by: <%= @article.user.username if @article.user %>,
+					<%= time_ago_in_words(@article.created_at) %> ago,
+					last updated: <%= time_ago_in_words(@article.updated_at) %> ago
+				</small>
+			</div>
+			<div class="nes-container is-dark">
+				<h1 class="text-center">Comment Section</h1>
+				<section class= "message-list">
+					<% @comments.each do |comment| %>
+							<section class="text-center">
+								<div class="nes-balloon from-right is-dark">
+									<p>From: <%= comment.user.username %></p>
+									<p>Text: <%= comment.body %></p>
+									<% if logged_in? && comment.user.username == current_user.username %>
+										<%= link_to "Delete Comment", comment_path(comment.id), method: :delete %>
+									<% end %>
+								</div>			
+							</section>
+					<% end %>
+				</section>				
+				<% if logged_in? %>
+					<hr>
+					<h4 class="text-center">Write a comment</h4>
+					<section class="message-list">
+						<%= render 'comments/form' %>
+					</section>
+					<hr>
+				<% end %>
+					<%= will_paginate @comments,:page_links => false %>
+			</div>
+		</div>
+		<div class="col-xl-3 d-none d-xl-block p-0 blur-middle"></div>
+	</div>
+</div>
+

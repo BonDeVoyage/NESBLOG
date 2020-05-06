@@ -1,0 +1,12 @@
+<%= form_for([@article, @article.comments.build]) do |f| %>
+	<p class="text-center">
+		<%= f.text_area(:body, class:'nes-textarea is-dark', size: '10x2')  %>
+	</p>
+	<p class="my-3 text-center">
+		<%= f.submit "Upload Comment",class:'nes-btn' %>
+	</p>
+<% end %>
+
+
+
+

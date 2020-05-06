@@ -1,0 +1,19 @@
+<%= render 'shared/errors' , obj:@article %>
+
+<%= form_for @article do |f| %>
+	<p class="text-center">
+		<%= f.label :title %><br>
+		<%= f.text_field :title , 'class':'nes-input is-dark'%>
+	</p>
+	<p class="text-center">
+		<%= f.label :text %><br>
+		<%= f.text_area(:text, class:'nes-textarea is-dark', size: '60x15')  %>
+	</p>
+	<p class="my-3 text-center">
+		<%= f.submit('class':'nes-btn')%>
+	</p>
+<% end %>
+
+
+
+

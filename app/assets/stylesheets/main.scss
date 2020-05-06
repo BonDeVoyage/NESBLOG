@@ -1,0 +1,127 @@
+@font-face {
+	font-family: 'Press Start 2P';
+	src: asset-url('fonts/PressStart2P-Regular.ttf') format("truetype");
+}
+
+.pagination {
+	margin: 0 auto;
+}
+
+.pagination li{
+	color: red;
+	margin: 0 15px;
+}
+
+.navbar {
+    background-color: transparent;
+}
+
+h2 {
+	color:blue;
+}
+
+hr {
+	border: 2px dashed grey;
+	border-radius: 10px;
+}
+
+.tdscss{
+	max-width:300px;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+
+.blur{
+   position:absolute;
+   top:0;
+   width: 100%;
+   min-height: 100%;
+   background: rgba(0,0,0,0.80);
+   z-index:-1;
+   filter: blur(0px);
+}
+
+.blur-middle-singup {
+	background: asset-url('singup.gif') no-repeat;
+	background-size: 100% 100%;
+	z-index:1;
+}
+
+.blur-middle-about {
+	background: asset-url('about.gif') no-repeat;
+	background-size: 100% 100%;
+	z-index:1;
+}
+
+.blur-middle-main {
+	background: asset-url('main.gif') no-repeat;
+	background-size: 100% 100%;
+	z-index:1;
+}
+
+.blur-middle, .navbar{
+	background: asset-url('background.jpg') no-repeat;
+	background-size: cover;
+}
+
+.blur-middle{
+	z-index:1;
+}
+
+.blur-middle:before, .blur-middle-about:before,.blur-middle-main:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+	background:inherit;
+	box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+    filter: blur(2px);
+	z-index:-1;
+}
+
+.navbar a {
+	font-size:24px;
+}
+
+#singup:link,#singup:visited {
+	color: rgb(212,175,55);
+}
+
+.backsing{
+	background: asset-url('singup.gif') no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+}
+
+#singup:hover{
+	color: rgb(255,223,0);
+}
+
+.back-about{
+	background: asset-url('about.gif') no-repeat;
+	-webkit-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+}
+
+.back-main{
+	background: asset-url('main.gif') no-repeat;
+	-webkit-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+}
+
+.back{
+	background: asset-url('background.jpg') no-repeat;
+	-webkit-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+}

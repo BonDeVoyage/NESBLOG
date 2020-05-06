@@ -1,0 +1,17 @@
+<% if obj.errors.any? %>
+	<div class="nes-container is-rounded is-dark">	
+		<p class = "nes-text is-error">
+			<%= pluralize(obj.errors.count, "error") %>
+			occured while saving the article:
+		</p>
+		<ul>
+			<% obj.errors.full_messages.each do |msg|%>
+				<li class='nes-text is-error'><%= msg %></li>
+			<% end %>
+		</ul>
+	</div>
+<% end %>
+
+
+
+
